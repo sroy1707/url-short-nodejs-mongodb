@@ -25,7 +25,7 @@ app.post("/shortUrls", async (req, res) => {
 });
 
 app.get("/:shortUrl", async (req, res) => {
-  const a = await shortUrl.findOne({ short: req.params.shortUrl });
+  const a = await shortUrl.findOne({short:req.params.shortUrl });
   if (a == null) return res.sendStatus(404);
 
   a.clicks++;
